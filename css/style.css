@@ -1,0 +1,166 @@
+html, body {margin: 0; padding: 0;}
+
+html {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 100vh;
+    background: url('bg.png');
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.nav p {
+    margin: 0;
+    margin-bottom: .8rem;
+    color: #38435E;
+    font-weight: bold;
+    font-family: sans-serif;
+    font-size: 1.4rem;
+}
+
+.nav .controls {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav .controls .slideContainer {
+    position: relative;
+}
+
+.nav .controls .slideContainer .slide {
+    margin-right: 2rem;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    height: 3.5rem;
+    border: 3px solid #38435E;
+    border-radius: 5px;
+    overflow: hidden;
+    outline: none;
+}
+
+::-webkit-slider-runnable-track {
+    background: #FFB400;
+}
+
+::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 3px;
+    height: 3.1rem;
+    background: #38435E;
+    box-shadow: -100vw 0 0 100vw #38435E;
+    cursor: pointer;
+}
+
+::-moz-range-thumb {
+    width: 3px;
+    height: 3.1rem;
+    background: #38435E;
+    box-shadow: -100vw 0 0 100vw #38435E;
+    cursor: pointer;
+}
+
+.nav .controls .slideContainer output { 
+    position: absolute;
+    background: #38435E;
+    width: 6rem; 
+    height: 1.7rem;
+    line-height: 1.7rem; 
+    text-align: center; 
+    font-family: sans-serif;
+    font-size: .8rem;
+    font-weight: bold;
+    color: white; 
+    border-radius: 5px; 
+    display: inline-block;
+    left: -105px;
+    top: 30%;
+  }
+  
+.nav .controls .slideContainer output:after { 
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 6px solid #38435E;
+    top: 33%;
+    left: 100%;
+  }
+
+.nav .controls .palette {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 5px;
+    border: 3px solid #38435E;
+    background: transparent;
+    outline: none;
+    margin-right: 2rem;
+}
+
+.nav .controls .cleaner {
+    position: relative;
+    z-index: 1;
+    width: 6.5rem;
+    height: 3.5rem;
+    border: none;
+    border-radius: 5px;
+    border: 3px solid #38435E;
+    background: #FFB400;
+    outline: none;
+    cursor: pointer;
+    color: #38435E;
+    font-weight: bold;
+    transition: color .3s ease-out;
+}
+
+.nav .controls .cleaner:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #38435E;
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    transition: transform .3s ease-out;
+    z-index: -1;
+}
+
+.nav .controls .cleaner:hover {
+    color: white;
+}
+
+.nav .controls .cleaner:hover:before {
+    transform: scaleX(1);
+}
+
+.container {
+    width: 40rem;
+    height: 40rem;
+    margin: 0 auto;
+    display: grid;
+    grid-gap: 1px;
+    border: 5px solid #38435E;
+    border-radius: 5px;
+    box-shadow: 0 0 4px rgba(0,0,0,0.4);
+    background: rgba(56, 67, 94, .15);
+}
+
+.item {
+    background: #fff;
+}
